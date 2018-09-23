@@ -7,17 +7,27 @@
     <div>
         <div id="c1"></div>
         <div id="c2"></div>
+        <div id="c3"></div>
     </div>
 </body>
 
 <script src="../../assets/js/core/jquery.min.js" type="text/javascript"></script>
 
 <script>
+
+//c3に挿入するテストデータのリスト
+var c3array = ["バリュー1","バリュー2","バリュー3"];
+var c3str = "";
+for(var i=0; i<c3array.length; i++){
+    c3str = c3str + "<li>" + c3array[0] + "</li>";
+}
+
 //画面が読み込まれたら実行する
 $(document).ready(function(){
     //文字列のみ挿入
     $("#c1").text("テキスト1");
     //HTMLごと挿入
     $("#c2").html("<div>テキスト2</div>");
+    $("#c3").html("<ul>" + c3str + "</ul>");
 });
 </script>
