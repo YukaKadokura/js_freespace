@@ -15,7 +15,9 @@
 <script>
 //画面が読み込まれたら実行する
 $(document).ready(function(){
+    //文字列のみ挿入
     $("#c1").text("テキスト1");
-    $("#c2").text("<div>テキスト2</div>");
+    //HTMLごと挿入
+    $("#c2").html("<div>テキスト2</div>");
 });
 </script>
