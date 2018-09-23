@@ -9,7 +9,7 @@
     <body>
         <div class="contents">
             <h1>MaterialDashboard - Card</h1>
-            <div class="content">
+            <div class="content c1">
                 <h2>シンプルなカード</h2>
                 margin上部
                 <div class="card">
@@ -19,7 +19,7 @@
                 </div>
                 margin下部
             </div>
-            <div class="content">
+            <div class="content c2">
                 <h2>card-body内に複数の要素があるカード</h2>
                 <div class="card">
                     <div class="card-body">
@@ -31,12 +31,25 @@
                     </div>
                 </div>
             </div>
+            <div class="content c3">
+                    <h2>width:50%;を指定したカード</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">カードタイトル</h4>
+                            <h6 class="card-subtitle">カードサブタイトル</h6>
+                            <p class="card-text">テキストテキストテキストテキストテキストテキスト</p>
+                            <a class="card-link" href="#">リンク1</a>
+                            <a class="card-link" href="#">リンク2</a>
+                        </div>
+                    </div>
+                </div>
             <div class="content memo">
                 <h2>MEMO</h2>
                 <ul>
                     <li>cardにデフォルトのpaddingが含まれている。→消す方法は？</li>
                     <li>cardの上下にデフォルトのmarginが含まれている。→消す方法は？</li>
                     <li>.cardにmargin:0;を当てたらmargin消えたが、paddingで同様にしても消えなかった。</li>
+                    <li>CSSのremって？→ルート要素のfont-size</li>
                 </ul>
             </div>
         </div>
@@ -57,5 +70,8 @@
     margin-top:10px;
     border-top:dashed 2px #454545;
     padding-top:10px;
+}
+.c3 .card{
+    width:50%;
 }
 </style>
