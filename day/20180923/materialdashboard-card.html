@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MaterialDashboard - Card</title>
+        <meta charset="UTF-8">
+        <!-- CSS Files -->
+        <link href="../../assets/css/material-dashboard.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="contents">
+            <h1>MaterialDashboard - Card</h1>
+            <div class="content">
+                <h2>シンプルなカード</h2>
+                margin上部
+                <div class="card">
+                    <div class="card-body">
+                        card-bodyのみのシンプルなカードです。カード自体に、別途styleは適用させていません。
+                    </div>
+                </div>
+                margin下部
+            </div>
+            <div class="content memo">
+                <h2>MEMO</h2>
+                <ul>
+                    <li>cardにデフォルトのpaddingが含まれている。→消す方法は？</li>
+                    <li>cardの上下にデフォルトのmarginが含まれている。→消す方法は？</li>
+                    <li>.cardにmargin:0;を当てたらmargin消えたが、paddingで同様にしても消えなかった。</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+.contents{
+    margin:10px;
+}
+.contents h1{
+    font-size:20px;
+}
+.contents h2{
+    font-size:20px;
+}
+.content{
+    margin-top:10px;
+    border-top:dashed 2px #454545;
+    padding-top:10px;
+}
+</style>
