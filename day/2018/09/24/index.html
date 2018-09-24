@@ -9,7 +9,17 @@
     </head>
     <body>
         <div class="container contents">
+            <!--パンくずリスト-->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">TOP</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">20180924</li>
+                </ol>
+            </nav>
             <h1>20180924 Mon. 晴れ</h1>
+            <div class="content">
+                <a class="btn btn-primary" href="./materialdashboard-table.html">MaterialDashboard - Table</a>
+            </div>
             <div class="content c1">
                 <div class="card">
                     <div class="card-body">
@@ -38,5 +48,8 @@
 <style>
 .contents h1,h2,h3{
     font-size:1.5rem;
+}
+.breadcrumb{
+    background:#eee;
 }
 </style>
