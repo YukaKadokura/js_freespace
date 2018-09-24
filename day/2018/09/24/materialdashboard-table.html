@@ -12,12 +12,12 @@
             <h1>MaterialDashboard - table</h1>
             <div class="content c1">
                 <h2>基本的なテーブル</h2>
-                <div id="test1"><!--テストデータ--></div>
+                <div class="testdataA"><!--テストデータ--></div>
             </div>
             <div class="content c2">
                 <h2>Card上の基本的なテーブル</h2>
                 <div class="card">
-                    <div id="test2" class="card-body"><!--テストデータ--></div>
+                    <div class="testdataA" class="card-body"><!--テストデータ--></div>
                 </div>
             </div>
             <div class="content c3">
@@ -34,36 +34,10 @@
                 <div class="card">
                         <div class="card-body row">
                             <div class="col-md-6">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ヘッダー1</th>
-                                            <th scope="col">ヘッダー2</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">データ1</th>
-                                            <td>データ2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <table id="test5" class="table table-bordered"><!--テストデータ--></table>
                             </div>
                             <div class="col-md-6">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ヘッダー1</th>
-                                            <th scope="col">ヘッダー2</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">データ1</th>
-                                            <td>データ2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <table id="test6" class="table table-bordered"><!--テストデータ--></table>
                             </div>
                         </div>
                     </div>
@@ -87,34 +61,33 @@
                     <div class="card-body row">
                         <div class="col-md-6">
                             <table class="table">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">ヘッダー1</th>
-                                        <th scope="col">ヘッダー2</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">データ1</th>
-                                        <td>データ2</td>
-                                    </tr>
-                                </tbody>
+                                <thead class="testdataC" class="thead-dark"><!--テストデータ--></thead>
+                                <tbody class="testdataD"><!--テストデータ--></tbody>
                             </table>
                         </div>
                         <div class="col-md-6">
                             <table class="table">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">ヘッダー1</th>
-                                        <th scope="col">ヘッダー2</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">データ1</th>
-                                        <td>データ2</td>
-                                    </tr>
-                                </tbody>
+                                <thead class="testdataC" class="thead-light"><!--テストデータ--></thead>
+                                <tbody class="testdataD"><!--テストデータ--></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content c7">
+                <h2>Card上の基本的なテーブル lightテーマ + 枠線</h2>
+                <div class="card">
+                    <div class="card-body row">
+                        <div class="col-md-6">
+                            <table class="table table-bordered">
+                                <thead class="testdataC" class="thead-light"><!--テストデータ--></thead>
+                                <tbody class="testdataD"><!--テストデータ--></tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-bordered">
+                                <thead class="testdataC" class="thead-light"><!--テストデータ--></thead>
+                                <tbody class="testdataD"><!--テストデータ--></tbody>
                             </table>
                         </div>
                     </div>
@@ -143,14 +116,19 @@
     var testdataB = '<thead><tr><th scope="col">ヘッダー1</th><th scope="col">ヘッダー2</th><th scope="col">ヘッダー3</th></tr></thead>'
                     + '<tbody><tr><th scope="row">データ1</th><td>データ2</td><td>データ3</td></tr></tbody>';
 
+    var testdataC = '<tr><th scope="col">ヘッダー1</th><th scope="col">ヘッダー2</th><th scope="col">ヘッダー3</th></tr>';
+
+    var testdataD = '<tr><th scope="row">データ1</th><td>データ2</td><td>データ3</td></tr>'
+
     $(document).ready(function(){
-        $("#test1").html(testdataA);
-        $("#test2").html(testdataA);
+        $(".testdataA").html(testdataA);
         $("#test3").html(testdataA);
         $("#test4").html(testdataA);
-        $("#test5").html(testdataA);
-        $("#test6").html(testdataA);
+        $("#test5").html(testdataB);
+        $("#test6").html(testdataB);
         $("#test7").html(testdataB);
         $("#test8").html(testdataB);
+        $(".testdataC").html(testdataC);
+        $(".testdataD").html(testdataD);
     });
 </script>
