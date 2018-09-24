@@ -179,10 +179,30 @@
                     </div>
                 </div>
             </div>
+            <div class="content c10">
+                <h2>Card上の基本的なテーブル table-sm（小）※MaterialDashboardのCSS読み込みでBootstrap4のtable-smが適用されないため独自定義した。</h2>
+                <div class="card">
+                    <div class="card-body row">
+                        <div class="col-md-6">
+                            <table class="table table-bordered table-sm">
+                                <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                <tbody class="testdataF"><!--テストデータ--></tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-bordered table-sm">
+                                <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                <tbody class="testdataF"><!--テストデータ--></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="content memo">
                 <h2>MEMO</h2>
                 <ul>
                     <li>col-mdで、6以外の数値をとると画面を小さくしてもレスポンシブにならない。</li>
+                    <li>MaterialDashboardのCSSを読み込んでいると、Bootstrap4のtable-smが適用されない。</li>
                 </ul>
             </div>
         </div>
@@ -195,6 +215,18 @@
     border-bottom:dashed 1px #454545;
     padding-top:5px;
     padding-bottom:5px;
+}
+.table-sm > thead > tr > th{
+    padding-top:0;
+    padding-bottom:0;
+}
+.table-sm > tbody > tr > th{
+    padding-top:0;
+    padding-bottom:0;
+}
+.table-sm > tbody > tr > td{
+    padding-top:0;
+    padding-bottom:0;
 }
 </style>
 
