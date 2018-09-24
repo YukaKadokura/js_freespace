@@ -32,11 +32,41 @@
             <div class="content c4">
                 <h2>Card上の基本的なテーブル + 枠線</h2>
                 <div class="card">
-                    <div class="card-body row">
-                        <div id="test5" class="col-md-6"><!--テストデータ--></div>
-                        <div id="test6" class="col-md-6"><!--テストデータ--></div>
+                        <div class="card-body row">
+                            <div class="col-md-6">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ヘッダー1</th>
+                                            <th scope="col">ヘッダー2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">データ1</th>
+                                            <td>データ2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ヘッダー1</th>
+                                            <th scope="col">ヘッダー2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">データ1</th>
+                                            <td>データ2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
             </div>
             <div class="content c5">
                 <h2>Card上の基本的なテーブル table-dark,lightテーマ</h2>
@@ -100,9 +130,6 @@
     border-bottom:dashed 1px #454545;
     padding-top:5px;
     padding-bottom:5px;
-}
-.contents .c4 table{
-    border:solid 1px #eee;
 }
 </style>
 
