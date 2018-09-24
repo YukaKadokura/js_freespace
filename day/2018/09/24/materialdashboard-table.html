@@ -23,10 +23,69 @@
             <div class="content c3">
                 <h2>Card上の基本的なテーブル*2</h2>
                 <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div id="test3" class="col-md-6"><!--テストデータ--></div>
-                            <div id="test4" class="col-md-6"><!--テストデータ-->/div>
+                    <div class="card-body row">
+                        <div id="test3" class="col-md-6"><!--テストデータ--></div>
+                        <div id="test4" class="col-md-6"><!--テストデータ-->/div>
+                    </div>
+                </div>
+            </div>
+            <div class="content c4">
+                <h2>Card上の基本的なテーブル + 枠線</h2>
+                <div class="card">
+                    <div class="card-body row">
+                        <div id="test5" class="col-md-6"><!--テストデータ--></div>
+                        <div id="test6" class="col-md-6"><!--テストデータ--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content c5">
+                <h2>Card上の基本的なテーブル table-dark,lightテーマ</h2>
+                <div class="card">
+                    <div class="card-body row">
+                        <div class="col-md-6">
+                            <table id="test7" class="table table-dark"><!--テストデータ--></table>
+                        </div>
+                        <div class="col-md-6">
+                            <table id="test8" class="table table-light"><!--テストデータ--></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content c6">
+                <h2>Card上の基本的なテーブル thead-dark,lightテーマ</h2>
+                <div class="card">
+                    <div class="card-body row">
+                        <div class="col-md-6">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">ヘッダー1</th>
+                                        <th scope="col">ヘッダー2</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">データ1</th>
+                                        <td>データ2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">ヘッダー1</th>
+                                        <th scope="col">ヘッダー2</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">データ1</th>
+                                        <td>データ2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -42,17 +101,29 @@
     padding-top:5px;
     padding-bottom:5px;
 }
+.contents .c4 table{
+    border:solid 1px #eee;
+}
 </style>
 
 <script src="../../../../assets/js/core/jquery.min.js" type="text/javascript"></script>
 
 <script>
-var testdata = '<table class="table"><thead><tr><th>ヘッダー1</th><th>ヘッダー2</th><th>ヘッダー3</th></tr></thead>'
-                + '<tbody><tr><th>データ1</th><th>データ2</th><th>データ3</th></tr></tbody></table>';
-$(document).ready(function(){
-    $("#test1").html(testdata);
-    $("#test2").html(testdata);
-    $("#test3").html(testdata);
-    $("#test4").html(testdata);
-});
+    //テストデータ
+    var testdataA = '<table class="table"><thead><tr><th scope="col">ヘッダー1</th><th scope="col">ヘッダー2</th><th scope="col">ヘッダー3</th></tr></thead>'
+                    + '<tbody><tr><th scope="row">データ1</th><td>データ2</td><td>データ3</td></tr></tbody></table>';
+
+    var testdataB = '<thead><tr><th scope="col">ヘッダー1</th><th scope="col">ヘッダー2</th><th scope="col">ヘッダー3</th></tr></thead>'
+                    + '<tbody><tr><th scope="row">データ1</th><td>データ2</td><td>データ3</td></tr></tbody>';
+
+    $(document).ready(function(){
+        $("#test1").html(testdataA);
+        $("#test2").html(testdataA);
+        $("#test3").html(testdataA);
+        $("#test4").html(testdataA);
+        $("#test5").html(testdataA);
+        $("#test6").html(testdataA);
+        $("#test7").html(testdataB);
+        $("#test8").html(testdataB);
+    });
 </script>
