@@ -93,6 +93,92 @@
                     </div>
                 </div>
             </div>
+            <div class="content c8">
+                <h2>Card上の基本的なテーブル lightテーマ + 枠線 3rows</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-3">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-3">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-3">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                            <div class="col-4">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                            <div class="col-4">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-bordered">
+                                    <thead class="testdataE thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataF"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content c9">
+                <h2>Card上の基本的なテーブル + table-bordered + hover</h2>
+                <div class="card">
+                        <div class="card-body row">
+                            <div class="col-md-6">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="testdataC thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataD"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="testdataC thead-light"><!--テストデータ--></thead>
+                                    <tbody class="testdataD"><!--テストデータ--></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </div>
     </body>
 </html>
@@ -118,12 +204,18 @@
 
     var testdataC = '<tr><th scope="col">ヘッダー1</th><th scope="col">ヘッダー2</th><th scope="col">ヘッダー3</th></tr>';
 
-    var testdataD = '<tr><th scope="row">データ1</th><td>データ2</td><td>データ3</td></tr>'
+    var testdataD = '<tr><th scope="row">データ1</th><td>データ2</td><td>データ3</td></tr>';
+
+    var testdataE = '<tr><th scope="col">ヘッダー1</th><th scope="col">ヘッダー2</th></tr>';
+
+    var testdataF = '<tr><th scope="row">データ1</th><td>データ2</td></tr>';
 
     $(document).ready(function(){
         $(".testdataA").html(testdataA);
         $(".testdataB").html(testdataB);
         $(".testdataC").html(testdataC);
         $(".testdataD").html(testdataD);
+        $(".testdataE").html(testdataE);
+        $(".testdataF").html(testdataF);
     });
 </script>
