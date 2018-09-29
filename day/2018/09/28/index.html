@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <h1>20180928</h1>
             <div class="content c1 mt-4">
                 <h2>GridSystemの検証です。</h2>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="content c5 mt-4">
-                <h2>カラム内でspan要素のiconを右寄せ/中央寄せ/左寄せにします。</h2>
+                <h2>カラム内でiconを右寄せ/中央寄せ/左寄せにします。</h2>
                 <p>i要素はインライン要素です。</p>
                 <div class="row">
                     <div class="col bg-primary text-right"><i class="material-icons">report_problem</i></div>
@@ -56,15 +56,22 @@
                     <div class="col bg-success text-left"><i class="material-icons">report_problem</i></div>
                 </div>
             </div>
+            <div class="content c6 mt-4 mb-4">
+                <h2>カラム内でiconと文字を右寄せ/中央寄せ/左寄せにします。</h2>
+                <p>i要素はインライン要素です。</p>
+                <p>iconと文字の位置を揃えています。（iconのvertical-alignをtext-bottom/baseline/text-top）</p>
+                <div class="row">
+                    <div class="col bg-primary text-right"><i class="material-icons text-bottom">report_problem</i><span>AAAAA</span></div>
+                    <div class="col bg-secondary text-center"><i class="material-icons baseline">report_problem</i><span>BBBBB</span></div>
+                    <div class="col bg-success text-left"><i class="material-icons text-top">report_problem</i><span>CCCCC</span></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
 
 <style>
-.container{
-    border:solid 1px black;
-}
-.container h1{
+h1{
     font-size:20px;
 }
 .content h2{
@@ -73,6 +80,19 @@
 .content p{
     font-size:13px;
 }
+.test{
+    font-size:20px;
+}
+.text-bottom{
+    vertical-align:text-bottom;
+}
+.baseline{
+    vertical-align:baseline;
+}
+.text-top{
+    vertical-align:text-top;
+}
+
 </style>
 
 <!--   Core JS Files   -->
