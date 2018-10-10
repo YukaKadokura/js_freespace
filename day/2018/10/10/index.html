@@ -17,7 +17,7 @@
             <h1>20181010</h1>
             <div class="content">
                 <div id="target">5.000</div>
-                <div id="result">0.000</div>
+                <div id="result" class="standby">0.000</div>
                 <div class="buttons">
                     <div id="start">Start</div>
                     <div id="stop">Stop</div>
@@ -60,9 +60,16 @@ h1{
     line-height:40px;
     box-shadow: 0 6px 0 grey;
 }
+#result.standby{
+    opacity:0.5;
+}
 #result.perfect{
     background:#FA5858;
     color:white;
+}
+#start.pushed, #stop.pushed{
+    margin-top:3px;
+    box-shadow:0 3px 0 grey;
 }
 </style>
 
@@ -74,19 +81,37 @@ h1{
     var stop = document.getElementById('stop');
     var result = document.getElementById('result');
     var startTime;
+    var isStarted = false;
 
     start.addEventListener('click', function() {
+        if(isStarted){
+            return;
+        }
+        isStarted = true;
         startTime = Date.now();
+        this.className = 'pushed';
+        stop.className = '';
+        result.textContent = '0.000';
+        result.className = 'standby'
     });
 
     stop.addEventListener('click', function() {
         var elapsedTime;
         var diff;
+        if(!isStarted){
+            return;
+        }
+        isStarted = false;
         elapsedTime = (Date.now() - startTime) / 1000;
         result.textContent = elapsedTime.toFixed(3);
+        this.className = 'pushed';
+        start.className = '';
+        result.className = ''
         diff = elapsedTime - 5.0;
         if(Math.abs(diff) < 1.0){
             result.className = 'perfect';
+        }else{
+            result.className = '';
         }
     });
 })();
