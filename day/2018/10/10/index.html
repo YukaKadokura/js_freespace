@@ -60,8 +60,34 @@ h1{
     line-height:40px;
     box-shadow: 0 6px 0 grey;
 }
+#result.perfect{
+    background:#FA5858;
+    color:white;
+}
 </style>
 
 <script>
+(function() {
+    'use strict';
 
+    var start = document.getElementById('start');
+    var stop = document.getElementById('stop');
+    var result = document.getElementById('result');
+    var startTime;
+
+    start.addEventListener('click', function() {
+        startTime = Date.now();
+    });
+
+    stop.addEventListener('click', function() {
+        var elapsedTime;
+        var diff;
+        elapsedTime = (Date.now() - startTime) / 1000;
+        result.textContent = elapsedTime.toFixed(3);
+        diff = elapsedTime - 5.0;
+        if(Math.abs(diff) < 1.0){
+            result.className = 'perfect';
+        }
+    });
+})();
 </script>
