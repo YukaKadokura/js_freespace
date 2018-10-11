@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UFT-8">
+        <title>float後のdivにstyleを適用してfloatを解除する</title>
+    </head>
+    <body>
+        <div class="content">
+        <h2>float後のdivにstyleを適用してfloatを解除する</h2>
+            <header>
+                <div class="container">
+                header
+                </div>
+            </header>
+            <main>
+                <div class="container">
+                <div id="left">Left</div>
+                <div id="right">Right</div>
+                </div>
+                <div style="clear:both;"></div>
+            </main>
+            <footer>
+                <div class="container">
+                footer
+                </div>
+            </footer>
+        </body>
+    </div>
+</html>
+<style>
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+header {
+  background: tomato;
+}
+
+main {
+  background: skyblue;
+}
+
+#left {
+  background: limegreen;
+  float: left;
+  width: 200px;
+}
+
+#right {
+  background: lightgreen;
+  float: left;
+  width: 300px;
+}
+
+footer {
+  clear: both;
+  background: slategray;
+}
+</style>
