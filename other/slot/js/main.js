@@ -16,7 +16,7 @@
         timers[n] = setTimeout(function(){
             panels[n].children[0].src = 
                 'img/' +
-                cards[Math.floor(Math.random() + cards.length)];
+                cards[Math.floor(Math.random() * cards.length)];
                 runSlot(n);
         }, 50);
     }
