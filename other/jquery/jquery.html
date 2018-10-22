@@ -15,12 +15,32 @@
                 })
             </script>
         </div>
+        <div class="content">
+            <h1>検証2：.item-pinkが付与されたクラスの文字をピンクにする</h1>
+            <ul>
+                <li>1</li>
+                <li class="item-pink">2</li>
+                <li>3</li>
+                <li class="item-pink">4
+                    <ul>
+                        <li>4-1</li>
+                        <li class="item-pink">4-2</li>
+                        <li>4-3</li>
+                    </ul>
+                </li>
+            </ul>
+            <script>
+            $(function(){
+                $('.item-pink').css('color','pink');
+            })
+            </script>
+        </div>
     </body>
 </html>
 <style>
 .content{
     margin-bottom:10px;
-    border-bottom:dashed 1px #eee;
+    border-bottom:dashed 1px grey;
 }
 .content > h1{
     font-size:10px;
