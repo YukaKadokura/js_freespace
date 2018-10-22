@@ -16,7 +16,8 @@
             </script>
         </div>
         <div class="content">
-            <h1>検証2：.item-pinkが付与されたクラスの文字をピンクにする</h1>
+            <h1>検証2：.の指定で特定のクラス名が付与されたDOMだけ操作する</h1>
+            <p>.item-pinkが付与されたクラスの文字をピンクにする</p>
             <ul>
                 <li>1</li>
                 <li class="item-pink">2</li>
@@ -35,9 +36,26 @@
             })
             </script>
         </div>
+        <div class="content">
+            <h1>検証3：>を使用して直下の子要素に限定したDOMを操作する</h1>
+            <div class="item-child">子供0</div>
+            <div class="item-parent">
+                親
+                <div class="item-child">子供1</div>
+                <div class="item-child">子供2</div>
+                <div class="item-child">子供3</div>
+            </div>
+            <div class="item-child">子供4</div>
+            <script>
+                $('.item-parent>.item-child').css('color', 'blue');
+            </script>
+        </div>
     </body>
 </html>
 <style>
+body{
+    font-size:10px;
+}
 .content{
     margin-bottom:10px;
     border-bottom:dashed 1px grey;
