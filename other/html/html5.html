@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <title>HTML5</title>
+    </header>
+    <body>
+        <h1>HTML5</h1>
+        <div class="content">
+            <h2>検証1：input autocompleteの検証。</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <input type="text" name="areaName" autocomplete="on" list="tokyo">
+                    <datalist id="tokyo">
+                        <option value="恵比寿">恵比寿</option>
+                        <option value="渋谷">渋谷</option>
+                        <option value="原宿">原宿</option>
+                        <option value="代々木">代々木</option>
+                        <option value="新宿">新宿</option>
+                    </datalist>
+                    <input type="submit" value="送信">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$('datalist#tokyo > option[value]').css('color', 'white');
+</script>
+
+<style>
+body{
+    font-size:10px;
+}
+.content{
+    padding:10px;
+    border-top:dashed 1px grey;
+}
+</style>
