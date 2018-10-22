@@ -50,6 +50,19 @@
                 $('.item-parent>.item-child').css('color', 'blue');
             </script>
         </div>
+        <div class="content">
+            <h1>検証4：+を使用して隣接する要素に限定したDOMを操作する</h1>
+            <p>.titleに隣接する.mainのみmargin-top:15px;をとる。</p>
+            <div class="title">タイトル</div>
+            <div class="main">本文1</div>
+            <div class="main">本文2</div>
+            <div class="main">本文3</div>
+            <script>
+                $(function(){
+                    $('.title + .main').css('margin-top','15px');
+                })
+            </script>
+        </div>
     </body>
 </html>
 <style>
