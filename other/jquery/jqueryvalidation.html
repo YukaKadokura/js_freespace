@@ -1,5 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body></body>
+    <head>
+        <meta charset="utf-8">
+        <title>JQueryValidation</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type='text/javascript' src="/js/jquery.validate.min.js"></script>
+        <script type='text/javascript' src="/js/jquery.validate.handler.js"></script>
+    </head>
+    <body>
+        <div class="content">
+            <h2>JQueryValidation</h2>
+            <p>JQueryValidationを使用すると、クライアント向けのバリデーションを簡単に実装できます。</p>
+            <p>バリデーションしたいフォームに対して、下記のように指定します。</p>
+            <div class="subcontent bg-eee">
+            <pre>
+                <code>
+                        $('フォームのIDやクラスを指定').validate({
+                            rules : {
+                                フォーム部品の名前:{
+                                    required:true
+                                }
+                            }
+                        })
+                </code>
+            </pre>
+            </div>
+        </div>
+    </body>
 </html>
+<script>
+
+</script>
+<style>
+body{
+    font-size:10px;
+}
+.content{
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom:dashed 1px grey;
+}
+.subcontent{
+    margin:10px;
+}
+.bg-eee{
+    background-color:#eee;
+}
+</style>
