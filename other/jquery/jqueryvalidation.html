@@ -13,18 +13,47 @@
             <p>JQueryValidationを使用すると、クライアント向けのバリデーションを簡単に実装できます。</p>
             <p>バリデーションしたいフォームに対して、下記のように指定します。</p>
             <div class="subcontent bg-eee">
-            <pre>
-                <code>
-                        $('フォームのIDやクラスを指定').validate({
-                            rules : {
-                                フォーム部品の名前:{
-                                    required:true
+                <pre>
+                    <code>
+                            $('フォームのIDやクラスを指定').validate({
+                                rules : {
+                                    フォーム部品の名前:{
+                                        required:true
+                                    }
                                 }
-                            }
-                        })
-                </code>
-            </pre>
+                            })
+                    </code>
+                </pre>
             </div>
+            <p>rulesオプション</p>
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>オプション</th>
+                    <th>オプションに設定する値</th>
+                    <th>オプションの説明</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>required</td>
+                        <td>true / false</td>
+                        <td>必須項目</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>email</td>
+                        <td>true / false</td>
+                        <td>Emailのフォーマットになっているかチェック</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>equalTo</td>
+                        <td>”要素名”</td>
+                        <td>要素の値と一致しているか</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
