@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <title>JQueryValidation</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type='text/javascript' src="/js/jquery.validate.min.js"></script>
-        <script type='text/javascript' src="/js/jquery.validate.handler.js"></script>
+        <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     </head>
     <body>
         <div class="content">
@@ -55,10 +54,32 @@
                 </tbody>
             </table>
         </div>
+        <div class="content">
+            <form id="form_validate">
+                <label name="form_email">Email</label>
+                <input name="form_email" type="text">
+                <input type="submit">
+            </form>
+        </div>
     </body>
 </html>
 <script>
-
+    $(document).ready(function() {
+        $("#form_validate").validate({
+        rules:{
+            form_email : {
+                required: true,
+                email : true
+            }
+        },
+        messages:{
+            form_email : {
+                required: "必須項目です。Emailを入力してください。",
+                email: "Emailの形式で入力してください。"
+            }
+        }
+        })
+    })
 </script>
 <style>
 body{
