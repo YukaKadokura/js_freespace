@@ -57,7 +57,7 @@
         <div class="content">
             <form id="form_validate">
                 <label name="form_email">Email</label>
-                <input name="form_email" type="text">
+                <input id="form_email" name="form_email" type="text">
                 <input type="submit">
             </form>
         </div>
@@ -95,5 +95,9 @@ body{
 }
 .bg-eee{
     background-color:#eee;
+}
+#form_email:required{
+    content:"*";
+    color:grey;
 }
 </style>
