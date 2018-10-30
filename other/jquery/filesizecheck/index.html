@@ -9,6 +9,10 @@
         <div class="content">
             <input id="hoge" multiple type="file"/>
             <ul id="bar"></ul>
+            <div>
+                <p id="fileSizeSum"></p>
+                <p id="fileSizeResult"></p>
+            </div>
         </div>
     </body>
 </html>
@@ -16,24 +20,53 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 <script>
+
+    /**
+     * 同時アップロード可能なファイルサイズの上限値
+     * @type {int} 上限値バイト数
+     */
+    const maxFileSize = 3000000; //3MB
+
+    /**
+     * ファイル選択のイベントをキャッチしてファイルの詳細情報を取得して表示する
+     * @param #hogeのchangeイベント
+     */
     $(function(){
         $("#hoge").on('change', function () {
             $("#bar").empty();
+            $("#fileSizeSum").empty();
+            $("#fileSizeResult").empty();
             var hoge = $("#hoge");
             var length = hoge[0].files.length;
             var items = hoge[0].files;
-            var bar = $("#bar");
+            var fileSizeSum = 0;
             if (length > 0) {
                 for (var i = 0; i < length; i++) {
-                    var fileName = items[i].name; // ファイル名を取得
-                    var fileSize = items[i].size; // ファイルサイズを取得
-                    var fileType = items[i].type; // ファイルのコンテンツタイプを取得
+                    var fileName = items[i].name; // ファイル名取得
+                    var fileSize = items[i].size; // ファイルサイズ取得
+                    var fileType = items[i].type; // ファイルのコンテンツタイプ取得
+                    fileSizeSum += items[i].size;
                     // 表示
-                    bar.append("<li>【ファイル名：" + fileName + " 】【サイズ：" + fileSize + " バイト】 【ファイルのタイプ:" + fileType + "】</li>");
+                    $("#bar").append("<li>【ファイル名：" + fileName + " 】【サイズ：" + fileSize + " バイト】 【ファイルのタイプ:" + fileType + "】</li>");
                 }
+                $("#fileSizeSum").append(`合計ファイルサイズは ${fileSizeSum} バイトです。`);
+                $("#fileSizeResult").append(checkFileSizeSum(fileSizeSum));
             }
         })
     });
+
+    /**
+     * ファイルサイズの合計値が同時アップロード可能なファイルサイズの上限かチェックする
+     * @param {int} ファイルサイズの合計値
+     * @return {string} チェック結果に伴う文字列
+     */
+    function checkFileSizeSum(sum){
+        if(sum > maxFileSize){
+            return "アップロード可能なファイルサイズの合計を超えています。";
+        }else{
+            return "アップロード可能なファイルサイズの上限内です。アップロードできます。";
+        }
+    }
 </script>
 
 <style>
