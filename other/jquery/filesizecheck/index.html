@@ -18,26 +18,22 @@
 <script>
     $(function(){
         $("#hoge").on('change', function () {
-        $("#bar").empty();
-        var hoge = $("#hoge");
-        var length = hoge[0].files.length;
-        var items = hoge[0].files;
-        var fragment = "";
-        var bar = $("#bar");
-        if (length > 0) {
-            for (var i = 0; i < length; i++) {
-                var fileName = items[i].name; // ファイル名を取得
-                var fileSize = items[i].size; // ファイルサイズを取得
-                var fileType = items[i].type; // ファイルのコンテンツタイプを取得
-            // 表示
-            //fragment += "<li>【ファイル名：" + fileName + " 】【サイズ：" + fileSize + " バイト】 【ファイルのタイプ:" + fileType + "】</li>";
-            bar.append("<li>【ファイル名：" + fileName + " 】【サイズ：" + fileSize + " バイト】 【ファイルのタイプ:" + fileType + "】</li>");
+            $("#bar").empty();
+            var hoge = $("#hoge");
+            var length = hoge[0].files.length;
+            var items = hoge[0].files;
+            var bar = $("#bar");
+            if (length > 0) {
+                for (var i = 0; i < length; i++) {
+                    var fileName = items[i].name; // ファイル名を取得
+                    var fileSize = items[i].size; // ファイルサイズを取得
+                    var fileType = items[i].type; // ファイルのコンテンツタイプを取得
+                    // 表示
+                    bar.append("<li>【ファイル名：" + fileName + " 】【サイズ：" + fileSize + " バイト】 【ファイルのタイプ:" + fileType + "】</li>");
+                }
             }
-        }
-    })
-
-    //function 
-});
+        })
+    });
 </script>
 
 <style>
