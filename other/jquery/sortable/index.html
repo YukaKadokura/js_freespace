@@ -11,13 +11,15 @@
         <h1>JQueryUIを使用した、ドラッグによる要素の入れ替え</h1>
         <div class="content">
             <h1>div要素のソート</h1>
-            <div id="sortable-div">
-                <div id="1" class="ui-state-default">ブロック1</div>
-                <div id="2" class="ui-state-default">ブロック2</div>
-                <div id="3" class="ui-state-default">ブロック3</div>
-                <div id="4" class="ui-state-default">ブロック4</div>
-                <div id="5" class="ui-state-default">ブロック5</div>
-            </div>
+            <form>
+                <div id="sortable-div">
+                    <div id="block-div1" class="block-div">ブロック1</div>
+                    <div id="block-div2" class="block-div">ブロック2</div>
+                    <div id="block-div3" class="block-div">ブロック3</div>
+                    <div id="block-div4" class="block-div">ブロック4</div>
+                    <div id="block-div5" class="block-div">ブロック5</div>
+                </div>
+            </form>
             <button type="submit" id="btn-submit">送信</button>
         </div>
     </body>
@@ -32,6 +34,20 @@ body{
 #sortable-div {
     width: 50%;
 }
+.block-div{
+    margin:5px;
+    padding:5px;
+    background:skyblue;
+    border-radius:5px;
+}
+#btn-submit{
+    margin-top:5px;
+    border-radius:4px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 </style>
 <script>
     $(function(){
@@ -40,10 +56,12 @@ body{
 
     $(function(){
         $('#btn-submit').click(function() {
+            console.log("#btn-submit clicked.");
             var itemIDs = '';
-            $('#sortable-div').map(function() {
-                itemIDs += $('#sortable-div').children('div').text() + ',';
-            });
+            var sortables = $('#sortable-div').children('div');
+            for(var i=0;i<sortables.length; i++){
+                itemIDs += sortables.eq(i).attr('id') + ',';
+            }
             console.log(itemIDs);
         });
     })
