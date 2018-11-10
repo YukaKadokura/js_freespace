@@ -5,6 +5,85 @@
         <title></title>
     </head>
     <body>
-        
+        <div class="content">
+            <div id="itemError"></div>
+            <table id="itemTable">
+                <thead>
+                    <th>名前</th>
+                    <th>性別</th>
+                    <th>備考</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>初期値1</td>
+                        <td>初期値2</td>
+                        <td>初期値3</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="itemPlusButton" class="circleButton">＋</button>
+            <button id="itemRemoveButton" class="circleButton">−</button>
+            <form>
+                <button type="submit">送信</button>
+            </form>
+        </div>
     </body>
 </html>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+    $(function(){
+        var itemCount = 1;
+        const itemCountMin = 1;
+        const itemCountMax = 10;
+
+        //＋ボタンが押下されたらtbody配下にtrとtd要素を追加します。
+        $('#itemPlusButton').on('click', function(){
+            if(itemCount + 1 > itemCountMax)
+            {
+                $('#itemError').empty();
+                $('#itemError').append('<span>アイテムは10個までです。これ以上増やせません。</span>').css('color','red');
+            }
+            else{
+                itemCount += 1;
+                $('#itemTable').append('<tr><td>テスト1</td><td>テスト2</td><td>テスト3</td></tr>');
+            }
+        })
+        //−ボタンが押下されたらtbody配下の一番下のtr要素を削除します。
+        $('#itemRemoveButton').on('click', function(){
+            if(itemCount - 1 < itemCountMin)
+            {
+                $('#itemError').empty();
+                $('#itemError').append('<span>アイテムは最低1個です。これ以上減らせません。</span>').css('color','red');
+            }
+            else{
+                itemCount -= 1;
+                $('#itemTable tbody tr:last').remove();
+            }
+        })
+    });
+</script>
+<style>
+.circleButton{
+    width:40px;
+    height:40px;
+    padding:5px;
+    border-radius:50%;
+    font-weight:bold;
+    font-size:15px;
+}
+#itemPlusButton{
+    background:orange;
+    color:white;
+}
+#itemRemoveButton{
+    background:skyblue;
+    color:white;
+}
+#itemTable{
+    border:solid 1px grey;
+    padding:5px;
+}
+#itemTable > thead{
+    border:solid 1px grey;
+}
+</style>
