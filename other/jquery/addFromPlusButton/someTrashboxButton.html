@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="content">
+            <div id="itemError"></div>
+            <table id="itemTable">
+                <thead>
+                    <th>削除ボタン</th>
+                    <th>名前</th>
+                    <th>性別</th>
+                    <th>備考</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="itemRemoveButton circleButton">×</span>
+                        </td>
+                        <td>
+                            <input type="text" class="nameData"/>
+                        </td>
+                        <td>
+                            <input type="text" class="sexData"/>
+                        </td>
+                        <td>
+                            <input type="text" class="remarksData"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" id="itemPlusButton" class="circleButton">＋</button>
+            <form>
+                <button type="button" id="submitButton">送信</button>
+            </form>
+        </div>
+    </body>
+</html>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+    $(function(){
+        var itemCount = 1;
+        const itemCountMin = 1;
+        const itemCountMax = 10;
+
+        //＋ボタンが押下されたらtbody配下にtrとtd要素を追加します。
+        $('#itemPlusButton').on('click', function(){
+            if(itemCount + 1 > itemCountMax)
+            {
+                $('#itemError').empty();
+                $('#itemError').append('<span>アイテムは10個までです。これ以上増やせません。</span>').css('color','red');
+            }
+            else{
+                itemCount += 1;
+                $('#itemTable').append('<tr><td><span class="itemRemoveButton circleButton">×</span></td><td><input type="text" class="nameData"/></td><td><input type="text" class="sexData"/></td><td><input type="text" class="remarksData"/></td></tr>');
+            }
+        })
+        //各要素のゴミ箱ボタンが押下されたらその要素を削除します。
+        $(document).on('click', '.itemRemoveButton', function(){
+            if(itemCount -1 < itemCountMin)
+            {
+                $('#itemError').empty();
+                $('#itemError').append('<span>アイテムは1個以上作成して下さい。これ以上減らせません。</span>').css('color','red');
+            }
+            else{
+                itemCount -= 1;
+                var parent =  $(this).parent().parent(); //TODO 修正
+                parent.remove();
+            }
+        })
+        //送信ボタンが押下されたらtbody配下のtr要素をjson化する。同時にnullチェックする。
+        $('#submitButton').on('click', function(){
+            //#itemTable tbody以下のtr数を取得
+            var trs = $('#itemTable tbody tr');
+            var itemCount = trs.length;
+
+            var objArray = new Array();
+            for(var i=0; i<itemCount; i++){
+                var tr = trs.eq(i);
+                 //tdの値を取得
+                var nameData = tr.find('.nameData').val(); //名前
+                var sexData = tr.find('.sexData').val(); //性別
+                var remarksData = tr.find('.remarksData').val(); //備考
+                if(IsNullOrEmpty({nameData, sexData, remarksData}))
+                {
+                    $('#itemError').empty();
+                    $('#itemError').append('<span>アイテムには全てに値を入力して下さい。</span>').css('color','red');
+                    return;
+                }
+                var obj = new Object();
+                obj.name = nameData;
+                obj.sex = sexData;
+                obj.remarks = remarksData;
+                objArray.push(obj);
+            }
+            var json = JSON.stringify(objArray);
+            console.log(json);
+        })
+
+        //引数のそれぞれの値がnullまたは空白の場合trueを返却します。
+        function IsNullOrEmpty(array)
+        {
+            for(var i=0; i<array.length; i++)
+            {
+                if(array[i] == null || array[i] == string.empty)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    });
+</script>
+<style>
+.circleButton{
+    width:40px;
+    height:40px;
+    padding:5px;
+    border-radius:50%;
+    font-weight:bold;
+    font-size:15px;
+}
+#itemPlusButton{
+    background:orange;
+    color:white;
+}
+.itemRemoveButton{
+    background:skyblue;
+    color:white;
+}
+#itemTable{
+    border:solid 1px grey;
+    padding:5px;
+}
+#itemTable > thead{
+    border:solid 1px grey;
+}
+</style>
