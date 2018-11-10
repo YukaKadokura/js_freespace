@@ -15,16 +15,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>初期値1</td>
-                        <td>初期値2</td>
-                        <td>初期値3</td>
+                        <td>
+                            <input type="text" class="nameData"/>
+                        </td>
+                        <td>
+                            <input type="text" class="sexData"/>
+                        </td>
+                        <td>
+                            <input type="text" class="remarksData"/>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            <button id="itemPlusButton" class="circleButton">＋</button>
-            <button id="itemRemoveButton" class="circleButton">−</button>
+            <button type="button" id="itemPlusButton" class="circleButton">＋</button>
+            <button type="button" id="itemRemoveButton" class="circleButton">−</button>
             <form>
-                <button type="submit">送信</button>
+                <button type="button" id="submitButton">送信</button>
             </form>
         </div>
     </body>
@@ -45,7 +51,7 @@
             }
             else{
                 itemCount += 1;
-                $('#itemTable').append('<tr><td>テスト1</td><td>テスト2</td><td>テスト3</td></tr>');
+                $('#itemTable').append('<tr><td><input type="text" class="nameData"/></td><td><input type="text" class="sexData"/></td><td><input type="text" class="remarksData"/></td></tr>');
             }
         })
         //−ボタンが押下されたらtbody配下の一番下のtr要素を削除します。
@@ -60,6 +66,47 @@
                 $('#itemTable tbody tr:last').remove();
             }
         })
+        //送信ボタンが押下されたらtbody配下のtr要素をjson化する。同時にnullチェックする。
+        $('#submitButton').on('click', function(){
+            //#itemTable tbody以下のtr数を取得
+            var trs = $('#itemTable tbody tr');
+            var itemCount = trs.length;
+
+            var objArray = new Array();
+            for(var i=0; i<itemCount; i++){
+                var tr = trs.eq(i);
+                 //tdの値を取得
+                var nameData = tr.find('.nameData').val(); //名前
+                var sexData = tr.find('.sexData').val(); //性別
+                var remarksData = tr.find('.remarksData').val(); //備考
+                if(IsNullOrEmpty({nameData, sexData, remarksData}))
+                {
+                    $('#itemError').empty();
+                    $('#itemError').append('<span>アイテムには全てに値を入力して下さい。</span>').css('color','red');
+                    return;
+                }
+                var obj = new Object();
+                obj.name = nameData;
+                obj.sex = sexData;
+                obj.remarks = remarksData;
+                objArray.push(obj);
+            }
+            var json = JSON.stringify(objArray);
+            console.log(json);
+        })
+
+        //引数のそれぞれの値がnullまたは空白の場合trueを返却します。
+        function IsNullOrEmpty(array)
+        {
+            for(var i=0; i<array.length; i++)
+            {
+                if(array[i] == null || array[i] == string.empty)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     });
 </script>
 <style>
