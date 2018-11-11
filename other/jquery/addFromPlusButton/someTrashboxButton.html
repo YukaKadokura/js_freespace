@@ -39,11 +39,14 @@
     </body>
 </html>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script>
     $(function(){
         var itemCount = 1;
         const itemCountMin = 1;
         const itemCountMax = 10;
+
+        $('#itemTable tbody').sortable();
 
         //＋ボタンが押下されたらtbody配下にtrとtd要素を追加します。
         $('#itemPlusButton').on('click', function(){
@@ -90,6 +93,7 @@
                     return;
                 }
                 var obj = new Object();
+                obj.seqNo = i + 1;
                 obj.name = nameData;
                 obj.sex = sexData;
                 obj.remarks = remarksData;
@@ -135,6 +139,9 @@
     padding:5px;
 }
 #itemTable > thead{
+    border:solid 1px grey;
+}
+#itemTable > tbody > tr{
     border:solid 1px grey;
 }
 </style>
