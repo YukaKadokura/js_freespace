@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="content">
+            <div id="itemError"></div>
+            <table id="itemTable">
+                <thead>
+                    <th>削除ボタン</th>
+                    <th>矢印ボタン</th>
+                    <th>名前</th>
+                    <th>性別</th>
+                    <th>備考</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="itemRemoveButton circleButton">×</span>
+                        </td>
+                        <td>
+                            <span class="itemUpButton circleButton">△</span>
+                            <span class="itemDownButton circleButton">▼</span>
+                        </td>
+                        <td>
+                            <input type="text" class="nameData"/>
+                        </td>
+                        <td>
+                            <input type="text" class="sexData"/>
+                        </td>
+                        <td>
+                            <input type="text" class="remarksData"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" id="itemPlusButton" class="circleButton">＋</button>
+            <form>
+                <button type="button" id="submitButton">送信</button>
+            </form>
+        </div>
+    </body>
+</html>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+    $(function(){
+        //一番上の要素にはUPボタンを表示しない
+        //一番下の要素にはDOWNボタンを表示しない
+        //UPボタンを押下すると上の要素と入れ替える
+        //DOWNボタンを押下すると下の要素と入れ替える
+    })
+</script>
+<style>
+.circleButton{
+    width:40px;
+    height:40px;
+    padding:5px;
+    border-radius:50%;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+}
+.itemUpButton{
+    background:skyblue;
+    color:white;
+}
+.itemDownButton{
+    background:blue;
+    color:white;
+}
+#itemPlusButton{
+    background:orange;
+    color:white;
+}
+.itemRemoveButton{
+    background:skyblue;
+    color:white;
+}
+#itemTable{
+    border:solid 1px grey;
+    padding:5px;
+}
+#itemTable > thead{
+    border:solid 1px grey;
+}
+#itemTable > tbody > tr{
+    border:solid 1px grey;
+}
+</style>
