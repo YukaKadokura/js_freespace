@@ -15,7 +15,9 @@
                 <span>TEST2</span>
                 <button @click=add2()>(+)</button>
                 <input id="test2parts" type="text">
-                {{ items2 }}
+                <span v-for="(ele, index) in items2">
+                    {{ ele.parts }}
+                </v-for>
             </div>
         </div>
     </body>
@@ -36,9 +38,9 @@
                 this.items1.push(test)
             },
             add2(){
-                this.items2.push(
-                    $('#test2parts').val()
-                )
+                this.items2.push({
+                    parts: $('#test2parts').val()
+                })
             }
         }
     })
