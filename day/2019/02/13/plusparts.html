@@ -1,27 +1,44 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <html>
     <head>
         <title>Plus Parts</title>
     </head>
     <body>
         <div id="app">
-            <button @click=add()>(+)</button>
-            {{ items }}
+            <div>
+                <span>TEST1</span>
+                <button @click=add1()>(+)</button>
+                {{ items1 }}
+            </div>
+            <div>
+                <span>TEST2</span>
+                <button @click=add2()>(+)</button>
+                <input id="test2parts" type="text">
+                {{ items2 }}
+            </div>
         </div>
     </body>
 </html>
 <script>
-    const test = '●';
+    const test1 = '●';
+
     var app = new Vue({
         el: "#app",
         data() {
             return{
-                items:[]
+                items1:[],
+                items2:[]
             }
         },
         methods:{
-            add(){
-                this.items.push(test)
+            add1(){
+                this.items1.push(test)
+            },
+            add2(){
+                this.items2.push(
+                    $('#test2parts').val()
+                )
             }
         }
     })
