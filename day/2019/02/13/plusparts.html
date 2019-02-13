@@ -16,6 +16,7 @@
                 <button @click=add2()>(+)</button>
                 <input class="test2parts" type="text">
                 <span v-for="(ele, index) in items2">
+                    {{ index }}
                     {{ ele.parts }}
                 </v-for>
             </div>
