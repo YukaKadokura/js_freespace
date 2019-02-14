@@ -15,13 +15,11 @@
                 <span>TEST2</span>
                 <button @click=add2()>(+)</button>
                 <input class="test2parts" type="text">
-                <component :is="props.item" />
             </div>
         </div>
     </body>
 </html>
 <script>
-    import Parts from './part.vue'
     const test1 = '●';
 
     var app = new Vue({
@@ -40,7 +38,7 @@
                 this.items1.push(test)
             },
             add2(){
-                this.items2.push('parts')
+                this.items2.push($('.test2parts :first'))
             }
         }
     })
