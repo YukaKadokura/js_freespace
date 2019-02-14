@@ -15,19 +15,20 @@
                 <span>TEST2</span>
                 <button @click=add2()>(+)</button>
                 <input class="test2parts" type="text">
-                <span v-for="(ele, index) in items2">
-                    {{ index }}
-                    {{ ele.parts }}
-                </v-for>
+                <component :is="props.item" />
             </div>
         </div>
     </body>
 </html>
 <script>
+    import Parts from './part.vue'
     const test1 = '●';
 
     var app = new Vue({
         el: "#app",
+        components:{
+            parts: Parts,
+        },
         data() {
             return{
                 items1:[],
@@ -39,9 +40,7 @@
                 this.items1.push(test)
             },
             add2(){
-                this.items2.push({
-                    parts: $('.test2parts').eq(0)
-                })
+                this.items2.push({part})
             }
         }
     })
