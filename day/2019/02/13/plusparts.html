@@ -14,7 +14,12 @@
             <div>
                 <span>TEST2</span>
                 <button @click=add2()>(+)</button>
-                <input class="test2parts" type="text">
+                <input id="test2parts" type="text">
+                <div v-for="item in items2">
+                    <div v-html="item">
+
+                    </div>
+                </div>
             </div>
         </div>
     </body>
@@ -32,10 +37,11 @@
         },
         methods:{
             add1(){
-                this.items1.push(test)
+                this.items1.push(test1)
             },
             add2(){
-                this.items2.push($('.test2parts :first'))
+                var item = $('#test2parts').prop("outerHTML");
+                this.items2.push(item)
             }
         }
     })
