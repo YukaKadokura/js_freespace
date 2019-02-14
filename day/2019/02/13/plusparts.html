@@ -14,7 +14,7 @@
             <div>
                 <span>TEST2</span>
                 <button @click=add2()>(+)</button>
-                <input id="test2parts" type="text">
+                <input id="test2parts" type="text" style="display:none">
                 <div v-for="item in items2">
                     <div v-html="item">
 
@@ -40,8 +40,9 @@
                 this.items1.push(test1)
             },
             add2(){
-                var item = $('#test2parts').prop("outerHTML");
-                this.items2.push(item)
+                var item = $('#test2parts').clone()
+                var addhtml = item.css('display','').prop("outerHTML");
+                this.items2.push(addhtml)
             }
         }
     })
