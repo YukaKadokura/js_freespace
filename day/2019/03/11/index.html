@@ -6,3 +6,21 @@
 
     </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('body').append('<div id="popupWrapper"></div>');
+        $.ajax({
+            url: "./popup.html",
+            type: "get",
+            success: function(data){
+                $('#popupWrapper').append(data);
+            },
+            error: function(data){
+                alert("Ajax failed.");
+                $('#popupWrapper').append(data);
+            }
+        })
+    })
+</script>
