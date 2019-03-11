@@ -8,7 +8,7 @@
         <div id="app">
             <component-a></component-a>
             <component-a></component-a>
-            <component-a></component-a>
+            <component-b></component-b>
         </div>
     </body>
 </html>
@@ -27,6 +27,15 @@
             }
         }
      });
+
+     Vue.component('component-b', {
+        template: '<input v-model="answer" style="margin:10px;"> {{ answer }}',
+        data: function(){
+            return{
+                answer: ""
+            }
+        },
+     })
 
     var app = new Vue({
         el: "#app",
