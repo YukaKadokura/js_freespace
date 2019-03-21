@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>001 sign up</title>
+    </head>
+    <body>
+        <div id="device">
+            <div id="title">sign up</div>
+            <div>
+                <input type="text" class="textForm" placeholder="UserName">
+            </div>
+            <div>
+                <input type="text" class="textForm" placeholder="Password">
+            </div>
+            <div>
+                <button id="signUpButton">GO</button>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+body{
+    background: whitesmoke;
+}
+#device{
+    width:350px;
+    height:700px; 
+    margin:20px auto auto auto;
+    border:solid 3px lightslategray;
+    border-radius: 20px;
+    background:gainsboro;
+}
+#title{
+    margin: 200px auto 10px 110px;
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+}
+.textForm{
+    font-size:25px;
+    margin: auto auto 5px 45px;
+    border-radius: 10px;
+}
+.textForm:focus{
+    border-radius: 10px;
+}
+.textForm::placeholder{
+    color:whitesmoke;
+    font-size:15px;
+}
+#signUpButton{
+    margin: 10px auto auto 140px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+#signUpButton:focus{
+    outline: none;
+}
+</style>
